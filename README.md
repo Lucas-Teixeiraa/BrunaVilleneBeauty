@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Landing Page — Bruna Villene | Natural Beauty Laser
 
-## Getting Started
+Este projeto é uma **landing page profissional** desenvolvida para **Bruna Villene**, especialista em **micropigmentação**, **design de sobrancelhas** e **procedimentos a laser**.
 
-First, run the development server:
+---
+
+## 📌 Sobre o Projeto
+
+A página tem como objetivo promover os serviços de Bruna Villene, oferecendo uma experiência visual elegante, informativa e funcional para potenciais clientes. As seções principais incluem:
+
+- Apresentação dos serviços
+- Galeria de trabalhos realizados
+- Depoimentos de clientes
+- Informações de contato e localização
+- Formulário para agendamento de consultas
+
+---
+
+## 🛠 Tecnologias Utilizadas
+
+Este projeto foi desenvolvido com um conjunto moderno de tecnologias web:
+
+- **Next.js 15** — Framework React com renderização híbrida, otimização de imagens e roteamento avançado
+- **React 18** — Biblioteca JavaScript para construção de interfaces de usuário
+- **TypeScript** — Superset de JavaScript com tipagem estática
+- **Tailwind CSS** — Framework utility-first para design responsivo
+- **Framer Motion** — Biblioteca de animações para React
+- **Shadcn UI** — Componentes de interface acessíveis e reutilizáveis
+- **Lucide React** — Ícones minimalistas e elegantes
+- **React Icons** — Biblioteca complementar com ícones de redes sociais
+
+---
+
+## ✨ Funcionalidades e Características
+
+- 💻 **Design Responsivo** — Totalmente adaptado a dispositivos móveis, tablets e desktops
+- 🎮 **Animações Suaves** — Transições e efeitos visuais com Framer Motion
+- 📈 **SEO Otimizado** — Estrutura semântica favorecendo indexação nos motores de busca
+- ⚡ **Performance Aprimorada** — Carregamento rápido e otimização automática de imagens
+- ♿ **Acessibilidade** — Uso de boas práticas para garantir a navegação inclusiva
+
+---
+
+## 🚀 Como Executar Localmente
+
+Siga os passos abaixo para rodar o projeto localmente:
 
 ```bash
+# 1. Clone o repositório
+git clone https://github.com/seu-usuario/seu-repo.git
+
+# 2. Acesse a pasta do projeto
+cd seu-repo
+
+# 3. Instale as dependências
+npm install
+
+# 4. Execute o servidor de desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
