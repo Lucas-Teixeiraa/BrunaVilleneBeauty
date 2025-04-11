@@ -24,15 +24,28 @@ jobs:
       - name: Install dependencies 
         run: npm ci
 
-      - name: Build 🔧
+      - name: Build 
         run: npm run build
+        
+      - name: Debug output directory
+        run: |
+          ls -la
+          if [ -d "out" ]; then
+            echo "out directory exists"
+            ls -la out/
+          else
+            echo "out directory does not exist!"
+          fi
+        
+      - name: Create out directory if it doesn't exist
+        run: mkdir -p out
         
       - name: Add .nojekyll file 
         run: touch out/.nojekyll
 
-      - name: Deploy 🚀
+      - name: Deploy 
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: out # A pasta que contém os arquivos de build
-          branch: gh-pages # A branch para deploy
-          clean: true # Remove arquivos antigos
+          folder: out
+          branch: gh-pages
+          clean: true
