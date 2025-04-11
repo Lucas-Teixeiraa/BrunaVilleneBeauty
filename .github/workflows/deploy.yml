@@ -2,9 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ] # ou 'master' dependendo da sua branch principal
+    branches: [ main ]
 
-# Permite que o deploy seja executado de forma concorrente
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
