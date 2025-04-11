@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next build && touch out/.nojekyll && git add out/ -f && git commit -m \"Deploy to gh-pages\" && git subtree push --prefix out origin gh-pages"
+    "deploy": "gh-pages -d out",
+    "gh-pages": "^6.3.0"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.0",
@@ -36,6 +37,7 @@
     "autoprefixer": "^10.4.15",
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.4.28",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.2.2",
