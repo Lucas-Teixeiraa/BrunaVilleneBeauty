@@ -1,0 +1,39 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ] # ou 'master' dependendo da sua branch principal
+
+# Permite que o deploy seja executado de forma concorrente
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js 
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies 
+        run: npm ci
+
+      - name: Build 🔧
+        run: npm run build
+        
+      - name: Add .nojekyll file 
+        run: touch out/.nojekyll
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: out # A pasta que contém os arquivos de build
+          branch: gh-pages # A branch para deploy
+          clean: true # Remove arquivos antigos
