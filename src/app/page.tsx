@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+import CustomImage from "@/components/custom-image";
 import ClientOnly from "@/components/client-only";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -248,7 +248,7 @@ export default function Home() {
             onClick={() => setSelectedImage(null)}
           >
             <div className="relative w-11/12 md:w-3/4 lg:w-1/2 h-[70vh]">
-              <Image
+              <CustomImage
                 src={selectedImage}
                 alt="Zoom da Imagem"
                 fill
@@ -303,7 +303,7 @@ export default function Home() {
               </div>
             </div>
             <div className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden shadow-lg border border-[var(--border)]">
-              <Image
+              <CustomImage
                 src={photo_profile}
                 alt="Bruna - Especialista"
                 fill
@@ -327,7 +327,7 @@ export default function Home() {
                   className="card overflow-hidden h-[420px] flex flex-col shadow-md hover:shadow-xl transition-all duration-300"
                 >
                   <div className="relative w-full h-48">
-                    <Image
+                    <CustomImage
                       src={service.image}
                       alt={service.title}
                       fill
@@ -471,7 +471,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(93,64,55,0.7)] z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 <div className="relative h-full w-full overflow-hidden">
-                  <Image
+                  <CustomImage
                     src={item.image}
                     alt={`Trabalho realizado ${index + 1}`}
                     fill
@@ -517,7 +517,7 @@ export default function Home() {
             {/* Card com Foto do Local */}
             <Card className="card overflow-hidden">
               <div className="relative h-full min-h-[200px]">
-                <Image
+                <CustomImage
                   src={photo_loc}
                   alt="Localização"
                   fill

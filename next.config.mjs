@@ -2,7 +2,7 @@
 const nextConfig = {
   output: 'export',
   basePath: '/BrunaVilleneBeauty', 
-  assetPrefix: '/BrunaVilleBeauty/',
+  assetPrefix: '/BrunaVilleneBeauty/',
   images: {
     unoptimized: true, 
   },
