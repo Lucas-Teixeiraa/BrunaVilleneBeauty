@@ -87,23 +87,13 @@ const testimonials = [
   },
 ];
 
-// Galeria de trabalhos
+// Galeria de trabalhos com path ajustado para ambiente
 const gallery = Array(8).fill(null).map((_, i) => {
-  try {
-    // Use require to check if image exists at build time
-    const imagePath = `/work${i + 1}.jpg`;
-    return {
-      image: imagePath,
-      alt: `Trabalho ${i + 1}`,
-    };
-  } catch (e) {
-    console.error("Erro ao carregar a imagem da galeria:", e);
-    return {
-      image: '/placeholder.jpg',
-      alt: `Trabalho ${i + 1}`,
-      loading: true,
-    };
-  }
+  const baseImagePath = `/work${i + 1}.jpg`;
+  return {
+    image: baseImagePath, // O CustomImage vai ajustar o caminho
+    alt: `Trabalho ${i + 1}`,
+  };
 });
 
 export default function Home() {
@@ -538,7 +528,7 @@ export default function Home() {
             {/* Card do Mapa */}
             <Card className="card overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3749.8626115584398!2d-44.0596449!3d-19.9722793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6bfb3650a3601%3A0xe7447a2dd898a01!2sR.%20Alfa%2C%20308%20-%20Jardim%20Riacho%20das%20Pedras%2C%20Contagem%20-%20MG%2C%2032241-220!5e0!3m2!1spt-BR!2sbr!4v1744222167084!5m2!1spt-BR!2sbr"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3749.8626115584398!2d-44.0596449!3d-19.9722793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6bfb3650a3601%3A0xe7447a2dd898a01!2sR.%20Alfa%2C%20308%20-%20Jardim%20Riacho%20das%20Pedras%2C%20Contagem%20-%20MG!5e0!3m2!1spt-BR!2sbr!4v1744222167084!5m2!1spt-BR!2sbr"
                 className="w-full h-full min-h-[200px]"
                 allowFullScreen
                 loading="lazy"
