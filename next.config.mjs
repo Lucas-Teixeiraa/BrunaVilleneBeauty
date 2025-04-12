@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  ooutput: 'export',
+  output: 'export',
   basePath: '/BrunaVilleneBeauty', 
   assetPrefix: '/BrunaVilleBeauty/',
   images: {
