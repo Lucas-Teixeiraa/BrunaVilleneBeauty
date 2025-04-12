@@ -3,7 +3,6 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  // Configura o basePath para o GitHub Pages (produção) ou local (desenvolvimento)
   const basePath = process.env.NODE_ENV === 'production' ? '/BrunaVilleneBeauty' : '';
   
   return (

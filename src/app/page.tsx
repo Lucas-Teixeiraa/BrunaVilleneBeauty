@@ -11,11 +11,21 @@ import { MapPin, Clock, X } from "lucide-react";
 import { SiInstagram} from "react-icons/si";
 
 import photo_profile from "../../public/photo_prof.jpg";
+import { StaticImageData } from "next/image";
 import photo_service1 from "../../public/photo2.jpg";
 import photo_service2 from "../../public/photo3.jpg";
 import photo_serivce3 from "../../public/photo4.jpg";
 import photo_service4 from "../../public/photo5.jpg";
 import photo_loc from "../../public/photo_loc.jpg";
+
+import work1 from "../../public/work1.jpg";
+import work2 from "../../public/work2.jpg";
+import work3 from "../../public/work3.jpg";
+import work4 from "../../public/work4.jpg";
+import work5 from "../../public/work5.jpg";
+import work6 from "../../public/work6.jpg";
+import work7 from "../../public/work7.jpg";
+import work8 from "../../public/work8.jpg";
 
 // Dados dos serviços principais
 const mainServices = [
@@ -88,13 +98,16 @@ const testimonials = [
 ];
 
 // Galeria de trabalhos com path ajustado para ambiente
-const gallery = Array(8).fill(null).map((_, i) => {
-  const baseImagePath = `/work${i + 1}.jpg`;
-  return {
-    image: baseImagePath, // O CustomImage vai ajustar o caminho
-    alt: `Trabalho ${i + 1}`,
-  };
-});
+const gallery = [
+  { image: work1, alt: "Trabalho realizado 1" },
+  { image: work2, alt: "Trabalho realizado 2" },
+  { image: work3, alt: "Trabalho realizado 3" },
+  { image: work4, alt: "Trabalho realizado 4" },
+  { image: work5, alt: "Trabalho realizado 5" },
+  { image: work6, alt: "Trabalho realizado 6" },
+  { image: work7, alt: "Trabalho realizado 7" },
+  { image: work8, alt: "Trabalho realizado 8" }
+];
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -161,9 +174,9 @@ export default function Home() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleImageClick = (image: string) => {
-    setSelectedImage(image);
-  };
+  const handleImageClick = (image: StaticImageData) => {
+      setSelectedImage(image.src);
+    };
 
   return (
     <div className="flex flex-col min-h-screen bg-[var(--background)]">
@@ -460,7 +473,7 @@ export default function Home() {
               <div
                 key={index}
                 className="group relative h-72 border border-[var(--border)] rounded-md overflow-hidden shadow-md"
-                onClick={() => handleImageClick(item.image)}
+                onClick={() => handleImageClick(item.image as StaticImageData)}
               >
                 <CustomImage 
                   src={item.image}
