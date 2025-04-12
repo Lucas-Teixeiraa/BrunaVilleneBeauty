@@ -171,6 +171,10 @@ export default function Home() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleImageClick = (image: string) => {
+    setSelectedImage(image);
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-[var(--background)]">
       {/* Modals with ClientOnly */}
@@ -461,29 +465,21 @@ export default function Home() {
               </p>
             </Card>
             </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {gallery.map((item, index) => (
               <div
                 key={index}
-                className="group relative h-64 overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
-                onClick={() => setSelectedImage(item.image)}
+                className="group relative h-72 border border-[var(--border)] rounded-md overflow-hidden shadow-md"
+                onClick={() => handleImageClick(item.image)}
               >
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(93,64,55,0.7)] z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                <div className="relative h-full w-full overflow-hidden">
-                  <CustomImage
-                    src={item.image}
-                    alt={`Trabalho realizado ${index + 1}`}
-                    fill
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-                
-                <div className="absolute bottom-0 left-0 right-0 p-4 z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <button className="bg-white/90 backdrop-blur-sm text-[var(--foreground)] py-2 px-4 rounded-full text-sm font-medium hover:bg-white transition-colors duration-300">
-                    Ver detalhes
-                  </button>
+                <CustomImage 
+                  src={item.image}
+                  alt={`Trabalho realizado ${index + 1}`}
+                  fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-white p-3">
                 </div>
               </div>
             ))}
@@ -506,7 +502,7 @@ export default function Home() {
                 Belo Horizonte - MG
                 <br />
                 <a 
-                  href="tel:+5531920026350" 
+                  href="tel:55319920026350" 
                   className="text-[var(--icon-active)] hover:underline"
                 >
                   +55 31 9200-2635
