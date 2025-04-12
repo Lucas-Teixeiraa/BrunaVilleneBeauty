@@ -161,7 +161,7 @@ export default function Home() {
     const sanitizedName = formData.name.trim().replace(/[<>&]/g, '');
     const sanitizedMessage = formData.message.trim().replace(/[<>&]/g, '');
     
-    const whatsappNumber = "5531920026350";
+    const whatsappNumber = "553192002635";
     const whatsappMessage = `Olá, meu nome é ${sanitizedName}. Mensagem: ${sanitizedMessage}`;
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
   
@@ -505,7 +505,7 @@ export default function Home() {
                 Belo Horizonte - MG
                 <br />
                 <a 
-                  href="tel:55319920026350" 
+                  href="tel:553192002635" 
                   className="text-[var(--icon-active)] hover:underline"
                 >
                   +55 31 9200-2635
