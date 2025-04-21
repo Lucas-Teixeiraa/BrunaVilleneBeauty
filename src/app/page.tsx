@@ -27,7 +27,7 @@ import work6 from "../../public/work6.jpg";
 import work7 from "../../public/work7.jpg";
 import work8 from "../../public/work8.jpg";
 
-// Dados dos serviços principais
+// Dados importantes para a aplicação
 const mainServices = [
   {
     title: "Sobrancelhas",
@@ -51,7 +51,6 @@ const mainServices = [
   },
 ];
 
-// Dados dos testimoniais sem imagens
 const testimonials = [
   {
     name: "Ana Oliveira",
@@ -97,7 +96,6 @@ const testimonials = [
   },
 ];
 
-// Galeria de trabalhos com path ajustado para ambiente
 const gallery = [
   { image: work1, alt: "Trabalho realizado 1" },
   { image: work2, alt: "Trabalho realizado 2" },
